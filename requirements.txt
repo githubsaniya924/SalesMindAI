@@ -1,0 +1,16 @@
+Flask
+Flask-RESTful
+Flask-Migrate
+SQLAlchemy
+psycopg2-binary
+pydantic
+pandas
+requests
+python-dotenv
+email-validator
+pytest
+gunicorn
+alembic
+flask db upgrade
+
+
