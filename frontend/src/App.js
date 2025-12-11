@@ -1,12 +1,19 @@
-// frontend/src/App.js
-import LeadUpload from './components/LeadUpload'; // Adjust path as needed
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LeadUploadPage from "./pages/LeadUploadPage";
+import B2BGeneratorPage from "./pages/B2BGeneratorPage";
+import B2CGeneratorPage from "./pages/B2CGeneratorPage";
+import DashboardPage from "./pages/DashBoardPage";
 
 function App() {
   return (
-    <div className="App">
-      <LeadUpload />
-      {/* You'll add your other components for B2B/B2C generation here later */}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LeadUploadPage />} />
+        <Route path="/b2b" element={<B2BGeneratorPage />} />
+        <Route path="/b2c" element={<B2CGeneratorPage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
