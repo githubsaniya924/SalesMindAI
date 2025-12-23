@@ -1,10 +1,12 @@
-from backend.extensions import db 
+from backend.extensions import db
+from datetime import datetime
 
 class User(db.Model):
     __tablename__ = "users"
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String)
-    email = db.Column(db.String, unique=True)
-    password_hash = db.Column(db.String)
-    role = db.Column(db.String)
+    name = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(150), unique=True, nullable=False)
+    password_hash = db.Column(db.String(255), nullable=False)
+    role = db.Column(db.String(20), default="sales_rep")
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)

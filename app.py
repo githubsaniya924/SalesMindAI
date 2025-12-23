@@ -14,10 +14,11 @@ from backend.config import Config
 from backend.routes.leads import leads_bp
 # Import tasks (must be imported after celery is defined)
 import backend.utils.tasks 
+from backend.routes.auth import auth_bp
 
 def create_app():
     app = Flask(__name__)
-    
+    migrate = Migrate(app, db)
     app.config.from_object(Config)
 
     print("DB URL =", app.config.get("SQLALCHEMY_DATABASE_URI"))
@@ -50,7 +51,7 @@ def create_app():
 
     # Register blueprint
     app.register_blueprint(leads_bp, url_prefix="/api/leads")
-
+    app.register_blueprint(auth_bp, url_prefix="/api")
     # Sample route to get Celery task status
     @app.route('/api/tasks/<task_id>', methods=['GET'])
     def get_task_status(task_id):

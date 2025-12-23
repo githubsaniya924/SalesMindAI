@@ -1,0 +1,33 @@
+/* Home.css */
+.home { font-family: Arial, sans-serif; }
+.hero {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(to right, #111827, #1f2937);
+  color: white;
+}
+.hero-buttons { margin-top: 20px; }
+.btn { padding: 12px 20px; margin: 8px; border-radius: 6px; text-decoration: none; }
+.primary { background: #ef4444; color: white; }
+.secondary { border: 1px solid white; color: white; }
+.features { padding: 60px 20px; text-align: center; }
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+.card {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.difference { padding: 60px 20px; background: #f9fafb; text-align: center; }
+.diff-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.diff-card {
+  padding: 20px 30px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.cta { padding: 60px 20px; text-align: center; background: #111827; color: white; }
