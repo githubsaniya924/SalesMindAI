@@ -1,4 +1,13 @@
 import os
+from dotenv import load_dotenv
+
+# 👇 FORCE absolute path
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ENV_PATH = os.path.join(BASE_DIR, ".env")
+
+print("Loading ENV from:", ENV_PATH)
+
+load_dotenv(dotenv_path=ENV_PATH)
 
 class Config:
     # --- FLASK-SQLALCHEMY CONFIG (Keep these) ---
@@ -23,7 +32,10 @@ class Config:
 
     # This is also good practice for Celery 5.x
     worker_pool = 'solo'
-    
+   
+    EMAIL_USER = os.getenv("EMAIL_USER")
+    EMAIL_PASSWORD = os.getenv("EMAIL_PASSWORD")
+
     # Celery Beat Schedule
     CELERY_BEAT_SCHEDULE = {
         'check-daily-schedule-every-minute': {

@@ -6,12 +6,14 @@ import B2CGeneratorPage from "./pages/B2CGeneratorPage";
 import DashboardPage from "./pages/DashBoardPage";
 import SignInPage from "./pages/SignInPage";
 import SignUpPage from "./pages/SignUpPage";
+import OtpVerifyPage from "./pages/OtpVerifyPage";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/signin" element={<SignInPage />} />
+        <Route path="/login" element={<SignInPage />} />
         <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/verify-otp" element={<OtpVerifyPage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/leads" element={<LeadUploadPage />} />
         <Route path="/b2b" element={<B2BGeneratorPage />} />

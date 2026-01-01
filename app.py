@@ -14,7 +14,6 @@ from backend.config import Config
 from backend.routes.leads import leads_bp
 # Import tasks (must be imported after celery is defined)
 import backend.utils.tasks 
-from backend.routes.auth import auth_bp
 
 def create_app():
     app = Flask(__name__)
@@ -48,6 +47,8 @@ def create_app():
     from backend.models.outreach import OutreachLog
     from backend.models.enrichment import LeadEnrichment
     from backend.models.schedule import UserSchedule
+    from backend.routes.auth_routes import auth_bp
+
 
     # Register blueprint
     app.register_blueprint(leads_bp, url_prefix="/api/leads")
@@ -73,6 +74,8 @@ def create_app():
             }
 
         return jsonify(response)
+    
+    
 
     return app 
 
